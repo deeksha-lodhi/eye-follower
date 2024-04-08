@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #345995;
+}
+
+.eyes {
+    display: flex;
+}
+
+.eye {
+    position: relative;
+    width: 250px;
+    height: 150px;
+    margin: 0 20px;
+    border: 10px solid rgb(65, 41, 30);
+    border-radius: 50%/50%;
+    overflow: hidden;
+}
+
+.eye::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background-color: #272727;
+    border-radius: 50%;
+}
+
+.ball {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s;
+}
+
+.eye:hover .ball {
+    transform: translate(-50%, -40%);
+}
+
+@media screen and (max-width: 625px) {
+    .eye {
+        width: 180px;
+        height: 110px;
+    }
+
+    .ball {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .eye {
+        width: 150px;
+        height: 90px;
+    }
+
+    .ball {
+        width: 30px;
+        height: 30px;
+    }
+}
